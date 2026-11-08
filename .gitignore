@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+*.log
+.DS_Store
+
+# `tauri icon` regenerates mobile/store variants we don't ship (desktop app).
+# Keep only the desktop icons referenced by tauri.conf.json.
+src-tauri/icons/ios/
+src-tauri/icons/android/
+src-tauri/icons/Square*Logo.png
+src-tauri/icons/StoreLogo.png
+src-tauri/icons/64x64.png
+src-tauri/icons/icon.png

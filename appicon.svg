@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- App icon: the haiq brand mark (Lucide "feather", ISC) on the accent square. -->
+  <rect x="88" y="88" width="848" height="848" rx="190" ry="190" fill="#2f6bdc"/>
+  <g transform="translate(223,181) scale(26)" fill="none" stroke="#ffffff"
+     stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+    <line x1="16" y1="8" x2="2" y2="22"/>
+    <line x1="17.5" y1="15" x2="9" y2="15"/>
+  </g>
+</svg>
