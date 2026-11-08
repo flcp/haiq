@@ -3,19 +3,26 @@
 Iterative AI assisted writing as a **native macOS app**. Easy version rollback and comparisons.
 Can be used with any LiteLLM proxy.
 
-## Architecture
-
-- **Frontend** — React (Vite) running in WebView. Contains the whole view and application logic apart from the connection to the LLM.
-- **Backend** — Rust/Tauri app that hosts the frontend and connects to LiteLLM endpoint, avoiding CORS issues.
-
-Rust handles HTTP requests to avoid WebView CORS restrictions.
-API key never touches the WebView's network layer.
-
-It's distributed as a single macOS app bundle.
-
 ## Requirements
 
 To run the app, no additional software is required.
+
+## Install
+
+Temporary workaround for unsigned .dmg file:
+
+1. Download the latest `haiq_<version>_aarch64.dmg` from the
+   [**Releases page**](https://github.com/flcp/haiq/releases/latest).
+2. Open the DMG and drag **haiq** into **Applications**.
+3. On first launch — the build is unsigned, so clear the quarantine flag that
+   macOS adds to downloads, otherwise Gatekeeper reports the app as "damaged":
+
+   ```bash
+   xattr -dr com.apple.quarantine /Applications/haiq.app
+   ```
+
+   Then open haiq from Applications as usual.
+
 
 ## Tested development environment
 
@@ -62,3 +69,15 @@ Output in `src-tauri/target/release/bundle/`, e.g.:
 
 To change icons, edit
 `appicon.svg` and re-run.
+
+
+### Architecture
+
+- **Frontend** — React (Vite) running in WebView. Contains the whole view and application logic apart from the connection to the LLM.
+- **Backend** — Rust/Tauri app that hosts the frontend and connects to LiteLLM endpoint, avoiding CORS issues.
+
+Rust handles HTTP requests to avoid WebView CORS restrictions.
+API key never touches the WebView's network layer.
+
+It's distributed as a single macOS app bundle.
+
